@@ -68,9 +68,9 @@ Os datos deben almacenarse nun dicionario, de forma que:
     print(fake.random_int(min=1, max=100))
 """
 
-from faker import Faker
 import random as rnd
 
+from faker import Faker
 
 # lo configura para el idioma español de españa
 fake = Faker('es_ES')
