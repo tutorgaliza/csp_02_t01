@@ -67,7 +67,10 @@ Os datos deben almacenarse nun dicionario, de forma que:
 
     print(fake.random_int(min=1, max=100))
 """
+
 from faker import Faker
+import random as rnd
+
 
 # lo configura para el idioma español de españa
 fake = Faker('es_ES')
@@ -107,3 +110,9 @@ for code, person in people.items():
     print(f'Usuario {code}:')
     for feature in person:
         print(f'\t{feature}')
+
+# sorteo previo casting to a tuple or list
+# print(f'O usuario chamado {rnd.choice(tuple(people.values()))[0]} foi o afortunado!')
+
+# sorteo usando la clave del diccionario para generar el número aleatoriamente
+print(f'O usuario chamado {people[rnd.randint(1, len(people))][0]} foi o afortunado!')
