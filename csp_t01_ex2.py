@@ -1,4 +1,12 @@
 """
+    DIEGO SANCHEZ SANCHEZ
+    CSP T01 EX02
+    15/10/2026
+"""
+
+"""
+ENUNCIADO
+
 Faker é un paquete que se usa para xerar datos ficticios
 de usuarios e así poder facer probas nas nosas aplicacións.
 
