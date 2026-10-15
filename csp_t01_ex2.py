@@ -68,7 +68,7 @@ Os datos deben almacenarse nun dicionario, de forma que:
     print(fake.random_int(min=1, max=100))
 """
 
-#* Github: https://github.com/tutorgaliza/csp_02_t01.git
+# * Github: https://github.com/tutorgaliza/csp_02_t01.git
 
 import random as rnd
 
@@ -83,6 +83,7 @@ fake = Faker('es_ES')
 users = {
     i: (
         fake.name(),
+        # pone la dirección todo en una línea
         fake.address().replace('\n', ', '),
         fake.email(),
         fake.phone_number(),
@@ -113,10 +114,13 @@ for code, user in users.items():
     for feature in user:
         print(f'\t{feature}')
 
-# sorteo previo casting to a tuple or list
-# print(f'O usuario chamado {rnd.choice(tuple(people.values()))[0]} foi o afortunado!')
-
 # sorteo utilizando un número generado aleatoriamente que será
 # la posición del usuario dentro del diccionario
-code, user = tuple(users.items())[rnd.randint(0, len(users))]
+# code, user = tuple(users.items())[rnd.randint(0, len(users))]
+
+# más fácil, directamente generar un código aleatorio del diccionario users
+# code = rnd.randint(1, len(users))
+
+# directamente usando choice sobre una tupla o lista de pares de tuplas
+code, user = rnd.choice(tuple(users.items()))
 print(f'O usuario {code} chamado {user[0]} foi o afortunado!')
